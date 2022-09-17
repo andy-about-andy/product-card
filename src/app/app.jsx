@@ -1,5 +1,5 @@
 import React from "react";
-import { products } from "/src/moke";
+import { products, main } from "/src/moke";
 import ProductPage from "/src/product-page/product-page";
 import Catalog from "/src/catalog/catalog";
 import Layout from "/src/layout/layout";
@@ -24,7 +24,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainPage data={main} />} />
-          <Route index element={<Catalog products={products} />} />
+          <Route path="catalog" element={<Catalog products={products} />} />
           <Route path="product">
             <Route
               path=":code"
