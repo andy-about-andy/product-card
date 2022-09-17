@@ -3,6 +3,7 @@ import { products } from "/src/moke";
 import ProductPage from "/src/product-page/product-page";
 import Catalog from "/src/catalog/catalog";
 import Layout from "/src/layout/layout";
+import MainPage from "/src/main-page/main-page";
 
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 
@@ -22,6 +23,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route index element={<MainPage data={main} />} />
           <Route index element={<Catalog products={products} />} />
           <Route path="product">
             <Route

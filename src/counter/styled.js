@@ -5,12 +5,12 @@ export const StyledCounter = styled.span`
 `;
 
 export const Value = styled.input`
-  display: inline-block;
-  width: auto;
-  padding-left: 10px;
-  padding-right: 10px;
   font-size: 20px;
   font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
   border: none;
+  width: auto;
+  display: inline-block;
   text-align: center;
 `;

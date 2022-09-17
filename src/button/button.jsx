@@ -27,6 +27,12 @@ const Button = styled.button`
   &:active {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0);
   }
+  
+  &:disabled {
+    opacity: 0.7;
+    box-shadow: none;
+    background-color: ${(props) => props.theme.buttonColor};
+  }
 `;
 
 export default Button;
