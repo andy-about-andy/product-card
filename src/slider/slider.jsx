@@ -3,22 +3,24 @@ import { SwiperSlide } from "swiper/react";
 import "swiper/swiper.scss";
 import SwiperCore, { Navigation } from "swiper";
 import { Image } from "/src/elements";
-import { StyledSlider, StyledButton, SlyderWrapper } from "./styled";
+import { StyledWrapper, StyledButton, StyledSlider } from "./styled";
 
-function Slider({ images }) {
+function Slider({ images, width= 200, height= 257 }) {
   SwiperCore.use([Navigation]);
   const navigationPrevRef = useRef(null);
   const navigationNextRef = useRef(null);
 
-  return ( 
-    <SlyderWrapper>
+  return (
+    <StyledWrapper width={width}>
       <StyledButton left ref={navigationPrevRef} title="Назад">
         &lt;
       </StyledButton>
       <StyledButton right ref={navigationNextRef} title="Вперёд">
         &gt;
       </StyledButton>
-      <StyledSlider 
+      <StyledSlider
+        width={width}
+        height={height}
         onBeforeInit={(swiper) => {
           swiper.params.navigation.prevEl = navigationPrevRef.current;
           swiper.params.navigation.nextEl = navigationNextRef.current;
@@ -30,7 +32,6 @@ function Slider({ images }) {
         freeMode
         watchSlidesProgress
         slidesPerView={1}
-        spaceBetween={20}
         loop
       >
         {images &&
@@ -40,14 +41,13 @@ function Slider({ images }) {
               <Image
                 src={image}
                 alt="изображение продукта"
-                width="200"
-                height="257"
-                maxWidth="200"
+                height={height}
+                maxWidth={width}
               />
             </SwiperSlide>
           ))}
       </StyledSlider>
-    </SlyderWrapper>
+    </StyledWrapper>
   );
 }
 
