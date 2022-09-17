@@ -3,7 +3,7 @@ import Description from "/src/description/description";
 import Line from "/src/line/line";
 import { StyledTitle, DescriptionWrapper, StyledSlider } from "./styled";
 
-export default function Catalog({ data }) {
+export default function MainPage({ data }) {
   const [showAll, setShowAll] = useState(false);
   return (
     <>
